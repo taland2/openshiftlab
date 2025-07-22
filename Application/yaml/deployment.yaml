@@ -4,9 +4,6 @@ metadata:
 # Set your lab user name
   name: user14-hello-world
 spec:
-  containers:
-        name: hello-world
-        image: 'quay.io/taland2/talfirstimage:v2'
   replicas: 3
   selector:
     matchLabels:
@@ -27,7 +24,7 @@ spec:
               protocol: TCP
           imagePullPolicy: IfNotPresent
 # Update with the image you build in part 1
-          image: 'quay.io/user14/talfirstimage:v1'
+          image: 'quay.io/user14/talfirstimage:v2'
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
