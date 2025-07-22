@@ -5,7 +5,7 @@ metadata:
   name: user14-hello-world
 spec:
   containers:
-      - name: hello-world
+        name: hello-world
         image: 'quay.io/taland2/talfirstimage:v2'
   replicas: 3
   selector:
