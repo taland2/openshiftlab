@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
       - name: hello-world
-        image: 'quay.io/user14/talfirstimage:v2'
+        image: 'quay.io/taland2/talfirstimage:v2'
   replicas: 3
   selector:
     matchLabels:
