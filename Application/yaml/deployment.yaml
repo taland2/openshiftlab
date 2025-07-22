@@ -4,6 +4,10 @@ metadata:
 # Set your lab user name
   name: user14-hello-world
 spec:
+    spec:
+      containers:
+        - name: hello-world
+          image: 'quay.io/user14/talfirstimage:v2'
   replicas: 3
   selector:
     matchLabels:
