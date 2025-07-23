@@ -1,29 +1,26 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-# Set your lab user name
   name: {{ .Chart.Name }}
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
     matchLabels:
-# Set your lab user name
       app: {{ .Chart.Name }}
   template:
     metadata:
       labels:
-# Set your lab user name
         app: {{ .Chart.Name }}
     spec:
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
-          name:  {{ .Chart.Name }}
+          name: {{ .Chart.Name }}
           ports:
             - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
-          imagePullPolicy: IfNotPresent
-# Update with the image you build in part 1
+          imagePullPolicy: Always
+          terminationMessagePolicy: File
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
